@@ -1,0 +1,233 @@
+@font-face {
+  font-family: 'Maharlika';
+  src: url('./fonts/Maharlika-Regular.ttf') format('truetype');
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header img{
+height: 2.875rem;
+} 
+header {
+  background-color: #FCFDF6;
+  padding: 0.5rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1002; 
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: #314b2f;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-right: 2.5rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #2e8b57;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  margin-right: auto;
+}
+
+.dropdown-menu { 
+  display: none; 
+  position: absolute; 
+  top: 4.5rem;
+  right: 2rem;
+  background-color: white;
+  padding: 0.5rem 1rem; 
+  border-radius: 1rem; 
+  width: auto; 
+  min-width: 11.25rem; 
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.15); 
+  z-index: 1000; 
+} 
+
+.menu-grid {
+  display: flex;
+  flex-direction: column; 
+  gap: 0.5rem;
+}
+
+.menu-grid a { 
+  font-size: 1.375rem; 
+  font-weight: 700; 
+  color: #000; 
+  text-decoration: none; 
+} 
+
+.menu-grid a:hover {
+  text-decoration: underline; 
+}
+
+body {
+  font-family: 'Darker Grotesque', sans-serif;
+  color: #333;
+  background-color: #F7F7F7;
+  line-height: 1.6;
+}
+
+.hero {
+  background: url("../imagens/terra-firme.jpg") center/cover no-repeat;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  text-align: left;
+}
+
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(0.09375rem);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding-left: 4rem;
+  font-size: 1.4rem;
+  text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.8);
+}
+
+.hero__content h1 {
+  font-family: 'Maharlika', serif;
+  font-weight: normal;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+.hero__content p{
+  font-size: 1.6rem;
+}
+
+.arrow-container {
+  position: absolute;
+  bottom: -1.5625rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.arrow-down {
+  background-color: #183410;
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.arrow-down svg path {
+  fill: white;
+}
+
+.info-section {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.text-and-cards-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.text-content {
+  flex: 1;
+  margin-bottom: 4rem;
+}
+
+.text-content h2 {
+  font-size: 2.3rem;
+  color: #4A6B32;
+  margin-bottom: 1rem;
+}
+
+.text-content p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #000;
+  text-align: justify;
+}
+
+.image-content {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.image-content img {
+  width: 100%;
+  max-width: 43.75rem;
+  margin-top: 2rem;
+  margin-right: -3rem;
+  height: 47rem;
+  border-radius: 0.75rem;
+  border: 0.375rem solid #304E2A;
+  object-fit: cover;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top:  0.3rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 0.125rem solid #4b7b3e;
+  border-radius: 0.625rem;
+  background-color: #fdfdfb;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+}
+
+.card p {
+  font-size: 1.3rem;
+  color: #000;
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.card i {
+  font-size: 2rem;
+  color: #4b7b3e;
+}

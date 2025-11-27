@@ -1,0 +1,138 @@
+@font-face {
+  font-family: 'Maharlika';
+  src: url('../../fonts/Maharlika-Regular.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #FCFDF6;
+  padding: 0.5rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1002; 
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+header img{
+  height: 2.875rem;
+}
+
+nav a {
+  color: #314b2f;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-right: 2.5rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #2e8b57;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  margin-right: auto;
+}
+
+.dropdown-menu { 
+display: none; 
+position: absolute; 
+top: 4.5rem;
+right: 2rem;
+background-color: 
+white;
+padding: 0.5rem 1rem; 
+border-radius: 1rem; 
+width: auto; 
+min-width: 11.25rem; 
+box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.15); 
+z-index: 1000; 
+} 
+
+.menu-grid {
+display: flex;
+flex-direction: column; 
+justify-content: flex-end;
+gap: 0.5rem;
+}
+
+.menu-grid a { 
+font-size: 1.375rem; 
+font-weight: 700; color: #000; 
+text-decoration: none; 
+} 
+
+.menu-grid a:hover {
+ text-decoration: underline; 
+}
+
+body {
+  height: 100vh;
+  font-family: 'Darker Grotesque', sans-serif;
+  color: #fff;
+  background: 
+    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+    url('/edutec/imagens/FUNDO-QUIZ-2.jpg') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+}
+
+.conteudo {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.conteudo h1 {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0.125rem 0.125rem 0.3125rem rgba(0,0,0,0.5);
+}
+
+.conteudo p {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  background-color: #314b2fb0;
+  padding: 0.6rem 14rem;
+  border-radius: 2rem;
+}
+
+.ancora a {
+  display: block;
+  width: 100%; 
+  padding: 0.75rem 2rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.2);
+  background: #314b2f;
+  color: #fff;
+  border: 0.125rem solid #252f2789;
+  font-size: 1.8rem;
+}
+
+.ancora a:hover {
+  background: #fff;
+  color: #314b2f;
+  transform: translateY(-0.1875rem);
+}

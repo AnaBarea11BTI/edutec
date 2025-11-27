@@ -1,0 +1,56 @@
+      <!DOCTYPE html>
+      <html lang="pt-br">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Escolha seu Bioma</title>
+        <link rel="stylesheet" href="escolha.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap" rel="stylesheet">
+        <script src="../quiz.js" defer></script>
+      </head>
+      <body>
+        <header>
+          <nav>
+            <div class="logo"><img src="../amazonia/imagens/Logo (1) (1).png" alt=""></div>
+            <a href="#" id="btn-conteudo"><strong>Conteúdo</strong></a>
+            <a href="../quiz.html"><strong>Jogo</strong></a>
+            <a href="../../sobrenos/sobrenos.html"><strong>Sobre nós</strong></a>
+          </nav>
+          <div class="dropdown-menu" id="dropdown-menu">
+            <section class="menu-grade">
+              <div class="menu-grid">
+                <a href="/index.html">Página inicial</a>
+                <a href="../../devastação/devastação.html">Devastação</a>
+                <a href="../../fauna/fauna.html">Fauna</a>
+                <a href="../../flora/flora.html">Flora</a>
+                <a href="../../igapó/igapo.html">Igapó</a>
+                <a href="../../povos/povos.html">Povos</a>
+                <a href="../../projeto/projeto.html">Projetos de intervenção</a>
+                <a href="../../savana/savana.html">Savanas</a>
+                <a href="../../terrafirme/terrafirme.html">Terra Firme</a>
+                <a href="../../varzea/varzea.html">Várzea</a>
+              </div>
+            </section>
+          </div>
+        </header>
+
+        <div class="jogo">
+            <h1>Escolha seu Bioma!</h1>
+            <div class="escolher">        
+              <div class="opcoes">
+                <div class="amazonia"> <button onclick="iniciarQuiz('amazonia')">Amazônica</button> </div>
+                <div class="igapo"> <button onclick="iniciarQuiz('igapo')">Igapó</button> </div>
+                <div class="savana"> <button onclick="iniciarQuiz('savana')">Savana</button> </div>
+                <div class="terra"> <button onclick="iniciarQuiz('terra')">Terra Firme</button> </div>
+                <div class="varzea"> <button onclick="iniciarQuiz('varzea')">Várzea</button> </div>
+              </div>
+      
+              <div class="mapa">
+                <img src="/edutec/imagens/MAPA-QUIZ.png" alt="Mapa de vegetações">
+              </div>
+            </div>
+        </div>
+      </body>
+      </html>
