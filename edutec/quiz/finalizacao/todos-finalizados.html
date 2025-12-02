@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Finalizado!</title>
+  <title>Ranking</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="todos-finalizados.css">
-  <script src="../quiz.js" defer></script>
 </head>
 <body>
+
+  <!-- HEADER (não alterado) -->
   <header>
     <nav>
       <div class="logo"><img src="/edutec/imagens/Logo (1).png" alt=""></div>
@@ -18,6 +20,7 @@
       <a href="/edutec/quiz/quiz.html"><strong>Jogo</strong></a>
       <a href="/edutec/sobrenos/sobrenos.html"><strong>Sobre nós</strong></a>
     </nav>
+
     <div class="dropdown-menu" id="dropdown-menu">
       <section class="menu-grade">
         <div class="menu-grid">
@@ -32,16 +35,73 @@
           <a href="/edutec/terrafirme/terrafirme.html">Terra Firme</a>
           <a href="/edutec/varzea/varzea.html">Várzea</a>
         </div>
-  </section>
-  </div>
+      </section>
+    </div>
   </header>
 
-  <div class="conteudo">
-    <h1>Parabéns!</h1>
-    <p>Você completou todos os temas do quiz.</p>
+  <!-- CONTEÚDO DA PÁGINA -->
+  <main class="ranking-container">
+
+    <div class="ranking-box">
+      <h1 class="title">Ranking</h1>
+
+      <div class="item">
+        <div class="pos gold"><span>1</span></div>
+        <div class="avatar"></div>
+        <div class="content">
+          <p class="name">ANA LUIZA</p>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="points">20 acertos</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="pos silver"><span>2</span></div>
+        <div class="avatar"></div>
+        <div class="content">
+          <p class="name">BIA FIRMADO</p>
+          <div class="stars">⭐⭐⭐⭐</div>
+          <p class="points">19 acertos</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="pos bronze"><span>3</span></div>
+        <div class="avatar"></div>
+        <div class="content">
+          <p class="name">BIA FLOEL</p>
+          <div class="stars">⭐⭐⭐</div>
+          <p class="points">18 acertos</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="pos normal"><span>4</span></div>
+        <div class="avatar"></div>
+        <div class="content">
+          <p class="name">GI MIGLIORINI</p>
+          <div class="stars">⭐⭐</div>
+          <p class="points">16 acertos</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="pos normal"><span>5</span></div>
+        <div class="avatar"></div>
+        <div class="content">
+          <p class="name">MEL FONTES</p>
+          <div class="stars">⭐</div>
+          <p class="points">16 acertos</p>
+        </div>
+      </div>
+
+    </div>
+
     <div class="ancora">
       <a href="/index.html">Voltar para a Página Inicial</a>
     </div>
-  </div>
+
+  </main>
+
 </body>
 </html>

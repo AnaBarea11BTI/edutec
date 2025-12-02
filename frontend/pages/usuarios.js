@@ -1,26 +1,16 @@
-const main = document.querySelector('main')
+const main = document.querySelector("main")
 
-async function receberMensagemDoBackend() {
-  try {
-    const res = await fetch('http://localhost:3333')
-    if (!res.ok) {
-      console.error('Erro ao buscar usuários:', res.status)
-      return
-    }
-    const response = await res.json()
+async function receberMensagemDoBackend(){
+    const response = await fetch("http://localhost:3333").then(response => response.json())
 
-    if (!Array.isArray(response)) return
-
-    response.forEach((person) => {
-      main.innerHTML += `
+    response.map((persons) =>{
+    main.innerHTML += `
     <section>
-      <h2>Nome: ${person.name}</h2>
-      <p>E-mail: ${person.email}</p>
-    </section>`
-    })
-  } catch (err) {
-    console.error('Erro de rede ao buscar usuários:', err)
-  }
+    <h2>Nome: ${persons.name}</h2>
+    <p>E-mail: ${persons.email}</p>
+    </section>
+      `
+      })
 }
 
 receberMensagemDoBackend()

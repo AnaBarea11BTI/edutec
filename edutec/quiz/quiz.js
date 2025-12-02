@@ -1,3 +1,14 @@
+// 🚨 PROTEÇÃO: só pode jogar logado!
+const user = sessionStorage.getItem("user");
+if (!user || user === "undefined") {
+  aviso("Você precisa estar logado para jogar!");
+
+  // espera 1.5s antes de redirecionar
+  setTimeout(() => {
+    window.location.href = "/frontend/pages/login.html";
+  }, 1500);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const btnConteudo = document.getElementById("btn-conteudo");
   const dropdownMenu = document.getElementById("dropdown-menu");
@@ -75,8 +86,24 @@ function proximoQuiz() {
   if (proximoTema) {
     window.location.href = `/edutec/quiz/${proximoTema}/${proximoTema}-quiz.html`;
   } else {
-
     localStorage.clear();
     window.location.href = '/edutec/quiz/finalizacao/todos-finalizados.html';
   }
+}
+
+function aviso(msg) {
+  const el = document.getElementById("aviso");
+  el.innerText = msg;
+  el.classList.add("show");
+
+  setTimeout(() => {
+    el.classList.remove("show");
+  }, 3000);
+}
+
+const userBotao = sessionStorage.getItem("user");
+const botao = document.getElementById("btnJogar");
+
+if(!user){
+   botao.style.display = "none";
 }

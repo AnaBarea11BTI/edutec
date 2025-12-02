@@ -8,9 +8,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="quiz.css"/>
-  <script src="quiz.js"></script>
+  <script src="quiz.js" defer></script>
 </head>
 <body>
+  <div id="aviso" class="hide"></div>
+
   <header>
     <nav>
       <div class="logo"><img src="/edutec/imagens/Logo (1).png" alt=""></div>
@@ -40,7 +42,7 @@
 
   <main class="tela-inicio">
     <h1>Está preparado para iniciar<br>uma nova aventura?</h1>
-    <a href="./escolha-bioma.html/escolha.html" class="botao-jogar">Jogar</a>
+    <a href="./escolha-bioma.html/escolha.html" id="btnJogar" class="botao-jogar">Jogar</a>
   </main>
 </body>
 </html>

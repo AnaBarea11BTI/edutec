@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isCorrect) {
           finalizarQuizAtual(); 
         } else {
-          window.location.href = '../resposta-errada/questao.html?origem=4';
+          window.location.href = './resposta-errada/questao.html?origem=4';
         }
       }, 1000);
     });
