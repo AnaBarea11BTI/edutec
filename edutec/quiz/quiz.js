@@ -1,5 +1,7 @@
-const user = sessionStorage.getItem("user");
-if (!user || user === "undefined") {
+const userString = sessionStorage.getItem("user");
+const user = userString ? JSON.parse(userString) : null;
+
+if (!user) {
   aviso("Você precisa estar logado para jogar!");
 
   setTimeout(() => {
@@ -31,15 +33,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-const temas = ['amazonia', 'igapo', 'savana', 'terra', 'varzea'];
+const temas = ["amazonia", "igapo", "savana", "terra", "varzea"];
 
 function getTemaAtualFromURL() {
   const path = window.location.pathname;
-  const parts = path.split('/').filter(Boolean);
-  if (parts.length > 2 && parts[1] === 'quiz') {
+  const parts = path.split("/").filter(Boolean);
+  if (parts.length > 2 && parts[1] === "quiz") {
     return parts[2];
   }
-  return '';
+  return "";
 }
 
 function criarOrdemAPartirDe(inicio) {
@@ -50,47 +52,53 @@ function criarOrdemAPartirDe(inicio) {
 
 function iniciarQuiz(temaEscolhido) {
   const ordemQuiz = criarOrdemAPartirDe(temaEscolhido);
-  localStorage.setItem('ordemQuiz', JSON.stringify(ordemQuiz));
-  localStorage.setItem('temasCompletados', JSON.stringify([]));
-  localStorage.removeItem('temaRecemConcluido');
-  localStorage.setItem('temaInicial', temaEscolhido);
+  localStorage.setItem("ordemQuiz", JSON.stringify(ordemQuiz));
+  localStorage.setItem("temasCompletados", JSON.stringify([]));
+  localStorage.removeItem("temaRecemConcluido");
+  localStorage.setItem("temaInicial", temaEscolhido);
   window.location.href = `/edutec/quiz/${temaEscolhido}/${temaEscolhido}-quiz.html`;
 }
 
 function finalizarQuizAtual() {
   const temaAtual = getTemaAtualFromURL();
-  let temasCompletados = JSON.parse(localStorage.getItem('temasCompletados')) || [];
-  const ordemQuiz = JSON.parse(localStorage.getItem('ordemQuiz')) || [];
+  let temasCompletados =
+    JSON.parse(localStorage.getItem("temasCompletados")) || [];
+  const ordemQuiz = JSON.parse(localStorage.getItem("ordemQuiz")) || [];
 
   if (!temasCompletados.includes(temaAtual)) {
     temasCompletados.push(temaAtual);
-    localStorage.setItem('temasCompletados', JSON.stringify(temasCompletados));
+    localStorage.setItem(
+      "temasCompletados",
+      JSON.stringify(temasCompletados)
+    );
   }
 
   if (temasCompletados.length >= ordemQuiz.length) {
     localStorage.clear();
-    window.location.href = '/edutec/quiz/finalizacao/todos-finalizados.html';
+    window.location.href = "/edutec/quiz/finalizacao/todos-finalizados.html";
   } else {
     window.location.href = "/edutec/quiz/finalizacao/finalizado.html";
   }
 }
 
 function proximoQuiz() {
-  const ordemQuiz = JSON.parse(localStorage.getItem('ordemQuiz')) || [];
-  const temasCompletados = JSON.parse(localStorage.getItem('temasCompletados')) || [];
+  const ordemQuiz = JSON.parse(localStorage.getItem("ordemQuiz")) || [];
+  const temasCompletados =
+    JSON.parse(localStorage.getItem("temasCompletados")) || [];
 
-  const proximoTema = ordemQuiz.find(t => !temasCompletados.includes(t));
+  const proximoTema = ordemQuiz.find((t) => !temasCompletados.includes(t));
 
   if (proximoTema) {
     window.location.href = `/edutec/quiz/${proximoTema}/${proximoTema}-quiz.html`;
   } else {
     localStorage.clear();
-    window.location.href = '/edutec/quiz/finalizacao/todos-finalizados.html';
+    window.location.href = "/edutec/quiz/finalizacao/todos-finalizados.html";
   }
 }
 
 function aviso(msg) {
   const el = document.getElementById("aviso");
+  if (!el) return;
   el.innerText = msg;
   el.classList.add("show");
 
@@ -99,9 +107,38 @@ function aviso(msg) {
   }, 3000);
 }
 
-const userBotao = sessionStorage.getItem("user");
 const botao = document.getElementById("btnJogar");
+if (!user && botao) {
+  botao.style.display = "none";
+}
 
-if(!user){
-   botao.style.display = "none";
+const avatar = document.querySelector("#avatar");
+const menu = document.querySelector("#menu-user");
+const info = document.querySelector("#menu-info");
+const logoutButton = document.querySelector("#logout");
+const loginButton = document.querySelector("#btn-login");
+
+
+if (!user) {
+  if (avatar) avatar.style.display = "none";
+} else {
+  if (loginButton) loginButton.style.display = "none";
+
+  if (info) {
+    info.innerHTML = `
+      <strong>${user.name}</strong><br>${user.email}
+    `;
+  }
+
+  if (avatar) {
+    avatar.onclick = () => menu.classList.toggle("hidden");
+  }
+}
+
+
+if (logoutButton) {
+  logoutButton.onclick = () => {
+    sessionStorage.removeItem("user");
+    window.location.reload();
+  };
 }

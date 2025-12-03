@@ -52,11 +52,14 @@
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
   width: 60%;
 }
+
 #aviso.show {
   display: block;
 }
 
-
+#menu-user p {
+    color: black;   
+}
 
 header img{
 height: 2.875rem;
