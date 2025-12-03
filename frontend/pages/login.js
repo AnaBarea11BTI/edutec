@@ -12,7 +12,7 @@ async function login(){
     const user = { email, password }
 
     try {
-        let response = await fetch("http://localhost:3333/login", {
+        let response = await fetch("https://edutec-backend-liard.vercel.app//login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

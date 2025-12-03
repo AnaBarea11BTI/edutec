@@ -3,20 +3,19 @@ const mensagemErroEl = document.getElementById("mensagemErro");
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
-  mensagemErroEl.innerText = ""; // limpa mensagens
+  mensagemErroEl.innerText = ""; 
 
   const name = document.querySelector("#nome").value.trim();
   const email = document.querySelector("#email").value.trim();
   const password = document.querySelector("#senha").value;
 
-  // validação de campos vazios
   if (!name || !email || !password) {
     mensagemErroEl.innerText = "Preencha todos os campos.";
     return;
   }
 
   try {
-    const response = await fetch("http://localhost:3333/cadastrar", {
+    const response = await fetch("https://edutec-backend-liard.vercel.app/cadastrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -26,7 +25,6 @@ form.addEventListener("submit", async (event) => {
 
     const data = await response.json();
 
-    // email já existente — backend deve devolver !response.ok
     if (!response.ok) {
       mensagemErroEl.innerText =
         data.error || data.message || "Erro ao cadastrar.";
