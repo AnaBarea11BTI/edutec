@@ -9,16 +9,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./savana.css"/>
   <script src="/script.js"></script>
+     <script src="/frontend/pages/botoaousuario.js" defer></script>
 </head>
 <body>
   <header>
     <nav>
       <div class="logo"><img src="../imagens/Logo (1).png" alt=""></div>
       <a href="/frontend/pages/cadastro.html"><strong>Cadastro</strong></a>
-      <a href="/frontend/pages/login.html"><strong>Login</strong></a>
+      <a href="/frontend/pages/login.html" id="btn-login" ><strong>Login</strong></a>
       <a href="#" id="btn-conteudo"> <strong>Conteúdo</strong></a>
       <a href="../quiz/quiz.html"> <strong>Jogo</strong></a>
       <a href="../sobrenos/sobrenos.html"> <strong>Sobre nós</strong></a>
+      <div class="user">
+      <img id="avatar" src="/edutec/imagens/bf09fe74-3ccb-4b8c-bd78-40fdaad0d971.png">
+      <div id="menu-user" class="hidden">
+        <p id="menu-info"></p>
+        <button id="logout">Sair</button>
+      </div>
+    </div>
     </nav>
     <div class="dropdown-menu" id="dropdown-menu">
       <section class="menu-grade">

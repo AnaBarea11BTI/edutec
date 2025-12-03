@@ -1,9 +1,7 @@
-// 🚨 PROTEÇÃO: só pode jogar logado!
 const user = sessionStorage.getItem("user");
 if (!user || user === "undefined") {
   aviso("Você precisa estar logado para jogar!");
 
-  // espera 1.5s antes de redirecionar
   setTimeout(() => {
     window.location.href = "/frontend/pages/login.html";
   }, 1500);

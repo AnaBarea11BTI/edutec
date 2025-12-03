@@ -8,6 +8,37 @@
   box-sizing: border-box;
 }
 
+.user{
+  position: relative;
+  display: inline-block;
+}
+
+.user img{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#menu-user{
+  position: absolute;
+  background: white;
+  padding: 10px;
+  top: 60px;
+  right: 0;
+  width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.hidden{
+  display: none;
+}
+
+#menu-user p{
+  margin-bottom: 10px;
+}
+
 header img{
 height: 2.875rem;
 } 

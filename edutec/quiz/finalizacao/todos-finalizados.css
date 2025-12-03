@@ -78,13 +78,11 @@ nav .logo {
   text-decoration: underline; 
 }
 
-/* BACKGROUND */
 body {
   font-family: 'Darker Grotesque', sans-serif;
   background-color: #314b2f;
 }
 
-/* CENTRALIZAR RANKING */
 .ranking-container {
   min-height: calc(100vh - 110px);
   display: flex;
@@ -95,7 +93,6 @@ body {
   padding-bottom: 2rem;
 }
 
-/* CAIXA DO RANKING */
 .ranking-box {
   background: rgba(0,0,0,0.45);
   padding: 2rem 3rem;
@@ -113,7 +110,6 @@ body {
   color: white;
 }
 
-/* ITEM */
 .item {
   display: flex;
   align-items: center;
@@ -161,7 +157,6 @@ body {
   font-size: 1.4rem;
 }
 
-/* BOTÃO FINAL */
 .ancora a {
   display: block;
   padding: 0.8rem 2rem;

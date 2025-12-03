@@ -5,6 +5,21 @@
     font-family: 'Darker Grotesque', sans-serif;
 }
 
+.title-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem; 
+    margin-bottom: 10px;
+}
+
+.back-btn {
+    font-size: 2.5rem;      
+    font-weight: 900;    
+    color: var(--primary-green);
+    text-decoration: none;
+    cursor: pointer;
+}
+
 :root {
     --primary-green: #145A32; 
     --input-background: #E8EDEB; 
@@ -34,7 +49,7 @@ body {
 }
 
 .form-side {
-    width: 55%;
+    width: 58%;
     padding: 20px 0; 
     display: flex;
     flex-direction: column;
@@ -145,7 +160,7 @@ h1 {
 
 .image-side {
     width: 45%;
-    background: url('/edutec/edutec/imagens/33.webp') no-repeat center center; 
+    background: url('/edutec/imagens/arvoresfundo.webp') no-repeat center center; 
     background-size: cover;
     min-height: 100%;
     border-top-right-radius: var(--main-border-radius);
